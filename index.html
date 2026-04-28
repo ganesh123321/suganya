@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Suganya Fancy - Retail & Wholesale supplier of fancy items, toys, and authorized dealer of Narmada Pipes in Krishnagiri & Dharmapuri.">
+    <title>Suganya Groups | Fancy Items, Wholesale Goods & Quality Pipes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- SVG Filter for Liquid/Gooey Effect -->
+    <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+            <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+            </filter>
+        </defs>
+    </svg>
+    <!-- Header -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo-link"><img src="logo.png" alt="Suganya Groups Logo" class="logo-img"></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h1>Suganya Groups</h1>
+            <p class="tagline">Your Trusted Partner for Fancy Items, Wholesale Goods & Quality Pipes</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/918148165710" target="_blank" class="btn btn-primary"><i
+                        class="fab fa-whatsapp"></i> Contact on WhatsApp</a>
+                <a href="#products" class="btn btn-secondary">View Products</a>
+            </div>
+            <div class="trust-indicators">
+                <div class="indicator"><i class="fas fa-check-circle"></i> Quality Products</div>
+                <div class="indicator"><i class="fas fa-tag"></i> Best Pricing</div>
+                <div class="indicator"><i class="fas fa-handshake"></i> Reliable Service</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section id="services" class="services-overview">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Core Services</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-service="fancy">
+                    <div class="icon-wrapper"><i class="fas fa-gifts"></i></div>
+                    <h3>Fancy Store</h3>
+                    <p>Wide range of cosmetics, gifts, toys, and household items for everyday retail needs. Click for details.</p>
+                </div>
+                <div class="service-card" data-service="wholesale">
+                    <div class="icon-wrapper"><i class="fas fa-boxes"></i></div>
+                    <h3>Wholesale Supply</h3>
+                    <p>Bulk supplier of toys and imported China products at highly competitive prices for shops. Click for details.</p>
+                </div>
+                <div class="service-card" data-service="pipes">
+                    <div class="icon-wrapper"><i class="fas fa-tools"></i></div>
+                    <h3>Narmada Pipes</h3>
+                    <p>Authorized dealer of Narmada Pipes in Krishnagiri and Dharmapuri regions. Click for details.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about">
+        <div class="container about-container">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Suganya Groups Store">
+            </div>
+            <div class="about-content">
+                <h2>About Suganya Groups</h2>
+                <div class="underline-left"></div>
+                <p>Welcome to <strong>Suganya Groups</strong>, your trusted local supplier serving the communities of
+                    Dharmapuri and Krishnagiri. With years of experience in retail, wholesale, and authorized
+                    dealership, we have established ourselves as a reliable name in the market.</p>
+                <p>Whether you are looking for everyday household items, seeking bulk supplies for your shop, or
+                    sourcing high-quality pipes for construction and agriculture, we've got you covered. Customer
+                    satisfaction and affordable pricing are at the core of everything we do.</p>
+                <ul class="about-features">
+                    <li><i class="fas fa-check"></i> Experienced Retailers & Wholesalers</li>
+                    <li><i class="fas fa-check"></i> Commitment to Customer Satisfaction</li>
+                    <li><i class="fas fa-check"></i> Affordable & Transparent Pricing</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Liquid Modal for Detailed Services -->
+    <div class="liquid-modal-overlay" id="serviceModal">
+        <div class="liquid-modal-content">
+            <button class="close-modal"><i class="fas fa-times"></i></button>
+            <div class="modal-body">
+                <div class="modal-icon"><i id="modalIcon" class="fas fa-star"></i></div>
+                <h3 id="modalTitle">Service Title</h3>
+                <div class="underline-left"></div>
+                <div id="modalDescription" class="modal-desc">
+                    Description goes here.
+                </div>
+            </div>
+            <!-- Decorative liquid blobs inside modal -->
+            <div class="modal-blob mb-1"></div>
+            <div class="modal-blob mb-2"></div>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Products</h2>
+                <div class="underline"></div>
+            </div>
+
+            <div class="product-tabs">
+                <button class="tab-btn active" data-target="fancy">Fancy Items</button>
+                <button class="tab-btn" data-target="wholesale">Wholesale Goods</button>
+                <button class="tab-btn" data-target="pipes">Pipes</button>
+            </div>
+
+            <div class="product-gallery">
+                <!-- Fancy Items -->
+                <div class="product-category active" id="fancy">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1596462502278-27bf85033e5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                            alt="Cosmetics">
+                        <div class="product-info">
+                            <h4>Cosmetics & Makeup</h4>
+                            <p>High-quality beauty products.</p>
+                            <a href="https://wa.me/918148165710?text=I'm%20interested%20in%20Cosmetics" target="_blank"
+                                class="btn-sm"><i class="fab fa-whatsapp"></i> Inquire</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                            alt="Gifts">
+                        <div class="product-info">
+                            <h4>Gift Items</h4>
+                            <p>Beautiful gifts for all occasions.</p>
+                            <a href="https://wa.me/918148165710?text=I'm%20interested%20in%20Gift%20Items"
+                                target="_blank" class="btn-sm"><i class="fab fa-whatsapp"></i> Inquire</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1558066512-882269a844a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                            alt="Household">
+                        <div class="product-info">
+                            <h4>Household Items</h4>
+                            <p>Daily essentials for your home.</p>
+                            <a href="https://wa.me/918148165710?text=I'm%20interested%20in%20Household%20Items"
+                                target="_blank" class="btn-sm"><i class="fab fa-whatsapp"></i> Inquire</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wholesale Products -->
+                <div class="product-category" id="wholesale">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                            alt="Wholesale Toys">
+                        <div class="product-info">
+                            <h4>Wholesale Toys</h4>
+                            <p>Bulk toys for retail shops.</p>
+                            <a href="https://wa.me/918148165710?text=I'm%20interested%20in%20Wholesale%20Toys"
+                                target="_blank" class="btn-sm"><i class="fab fa-whatsapp"></i> Get Quote</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1584984647264-7e614532b904?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                            alt="Imported Goods">
+                        <div class="product-info">
+                            <h4>Imported China Goods</h4>
+                            <p>Variety of imported items in bulk.</p>
+                            <a href="https://wa.me/918148165710?text=I'm%20interested%20in%20Imported%20Goods"
+                                target="_blank" class="btn-sm"><i class="fab fa-whatsapp"></i> Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pipes -->
+                <div class="product-category" id="pipes">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1585869403816-77be1c13dcb6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                            alt="PVC Pipes">
+                        <div class="product-info">
+                            <h4>PVC Pipes</h4>
+                            <p>Durable PVC pipes for plumbing.</p>
+                            <a href="https://wa.me/918148165710?text=I'm%20interested%20in%20PVC%20Pipes"
+                                target="_blank" class="btn-sm"><i class="fab fa-whatsapp"></i> Inquire</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1594912952403-1250325f69e6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                            alt="Agricultural Pipes">
+                        <div class="product-info">
+                            <h4>Agricultural Pipes</h4>
+                            <p>High-pressure pipes for farming.</p>
+                            <a href="https://wa.me/918148165710?text=I'm%20interested%20in%20Agricultural%20Pipes"
+                                target="_blank" class="btn-sm"><i class="fab fa-whatsapp"></i> Inquire</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1621252179027-94459d278660?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                            alt="CPVC Pipes">
+                        <div class="product-info">
+                            <h4>CPVC Pipes</h4>
+                            <p>Heat resistant CPVC solutions.</p>
+                            <a href="https://wa.me/918148165710?text=I'm%20interested%20in%20CPVC%20Pipes"
+                                target="_blank" class="btn-sm"><i class="fab fa-whatsapp"></i> Inquire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <div class="underline"></div>
+            </div>
+
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>Reach out to us for any inquiries, bulk orders, or product details.</p>
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <a href="tel:+918148165710">+91 81481 65710</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <a href="https://wa.me/918148165710" target="_blank">+91 81481 65710</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-file-invoice"></i>
+                        <div>
+                            <h4>GST Number</h4>
+                            <p>33CILPK8042B1ZI</p>
+                        </div>
+                    </div>
+
+                    <div class="locations">
+                        <h3>Our Locations</h3>
+                        <div class="location-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Fancy Store</h4>
+                                <p>1, Registerar Office, Main Rd, opp. petrol bank,<br>Palacode, Dharmapuri - 636808,
+                                    Tamil Nadu</p>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Pipe Dealership</h4>
+                                <p>Krishnagiri & Dharmapuri, Tamil Nadu</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <form id="inquiryForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="maps-container">
+                <div class="map-box">
+                    <h4>Palacode Store Location</h4>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.2661582236113!2d78.070624!3d12.302302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bac3e35a090b8f9%3A0xc34a66a1e8a005bc!2sPalacode%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin"
+                        width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="map-box">
+                    <h4>Krishnagiri Dealership Location</h4>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3897.6418873752536!2d78.2120023!3d12.5273767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baca06e23275727%3A0x6b8bc134493eb92f!2sKrishnagiri%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin"
+                        width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3>Suganya Groups</h3>
+                <p>Your Trusted Partner for Fancy Items, Wholesale Goods & Quality Pipes.</p>
+                <div class="gst-badge">GST: 33CILPK8042B1ZI</div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-phone"></i> +91 81481 65710</p>
+                <p><i class="fab fa-whatsapp"></i> +91 81481 65710</p>
+                <p><i class="fas fa-map-marker-alt"></i> Palacode Main Road, Palacode</p>
+                <p><i class="fas fa-map-marker-alt"></i> Krishnagiri & Dharmapuri</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Suganya Groups. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/918148165710" target="_blank" class="floating-whatsapp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
