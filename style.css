@@ -204,14 +204,14 @@ header.scrolled {
 }
 
 .logo-img {
-    height: 60px;
+    height: 80px;
     width: auto;
     object-fit: contain;
     transition: var(--transition);
 }
 
 header.scrolled .logo-img {
-    height: 50px;
+    height: 60px;
 }
 
 .nav-links {

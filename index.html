@@ -78,10 +78,10 @@
                     <h3>Wholesale Supply</h3>
                     <p>Bulk supplier of toys and imported China products at highly competitive prices for shops. Click for details.</p>
                 </div>
-                <div class="service-card" data-service="pipes">
+                <div class="service-card" onclick="window.location.href='narmada-pipes.html'" style="cursor: pointer;">
                     <div class="icon-wrapper"><i class="fas fa-tools"></i></div>
                     <h3>Narmada Pipes</h3>
-                    <p>Authorized dealer of Narmada Pipes in Krishnagiri and Dharmapuri regions. Click for details.</p>
+                    <p>Authorized dealer of Narmada Pipes in Krishnagiri and Dharmapuri regions. Click to view all products.</p>
                 </div>
             </div>
         </div>
@@ -366,6 +366,14 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // Initialize EmailJS with your public key
+            emailjs.init("YOUR_PUBLIC_KEY");
+        })();
+    </script>
     <script src="script.js"></script>
 </body>
 

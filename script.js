@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         pipes: {
             title: "Narmada Pipes Dealership Details",
             icon: "fa-tools",
-            desc: "As the authorized premier dealer for Narmada Pipes in Krishnagiri and Dharmapuri, we provide top-tier plumbing and agricultural piping solutions. <br><br><strong>Products Available:</strong> PVC, CPVC, UPVC, and heavy-duty agricultural high-pressure pipes. <br><br><strong>Ideal For:</strong> Builders, contractors, plumbers, and farmers seeking durable, leak-proof, and weather-resistant solutions manufactured to industry-leading standards."
+            desc: "As the authorized premier dealer for Narmada Pipes in Krishnagiri and Dharmapuri, we provide top-tier plumbing and agricultural piping solutions. <br><br><strong>Products Available:</strong><br><ul style=\"margin-left: 20px; margin-top: 10px;\"><li>UPVC Pressure Pipes</li><li>UPVC Casing Pipes</li><li>PP-R Pipes</li><li>PE-X Pipes & Fittings</li><li>HDPE Pipes</li><li>Drip Irrigation Systems</li><li>Sprinkler Irrigation System</li></ul><br><strong>Ideal For:</strong> Builders, contractors, plumbers, and farmers seeking durable, leak-proof, and weather-resistant solutions manufactured to industry-leading standards."
         }
     };
 
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     revealElements.forEach(el => revealObserver.observe(el));
 
-    // Contact Form Submission (Mock)
+    // Contact Form Submission with EmailJS
     const inquiryForm = document.getElementById('inquiryForm');
     if (inquiryForm) {
         inquiryForm.addEventListener('submit', (e) => {
@@ -157,20 +157,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 const originalText = btn.innerHTML;
                 btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
                 
-                setTimeout(() => {
-                    const waMessage = `Hello, I am ${name}.\nPhone: ${phone}\nMessage: ${message}`;
-                    const waUrl = `https://wa.me/918148165710?text=${encodeURIComponent(waMessage)}`;
-                    window.open(waUrl, '_blank');
-                    
-                    btn.innerHTML = '<i class="fas fa-check"></i> Sent!';
-                    btn.style.backgroundColor = '#10b981'; // Success Green
-                    
-                    setTimeout(() => {
-                        btn.innerHTML = originalText;
-                        btn.style.backgroundColor = '';
-                        inquiryForm.reset();
-                    }, 3000);
-                }, 800);
+                // Prepare template params
+                const templateParams = {
+                    from_name: name,
+                    phone_number: phone,
+                    message: message,
+                    to_name: "Suganya Groups"
+                };
+
+                // Send email via EmailJS
+                emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+                    .then(function(response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                        btn.innerHTML = '<i class="fas fa-check"></i> Sent!';
+                        btn.style.backgroundColor = '#10b981'; // Success Green
+                        
+                        setTimeout(() => {
+                            btn.innerHTML = originalText;
+                            btn.style.backgroundColor = '';
+                            inquiryForm.reset();
+                        }, 3000);
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                        btn.innerHTML = '<i class="fas fa-times"></i> Failed';
+                        btn.style.backgroundColor = '#ef4444'; // Error Red
+                        
+                        setTimeout(() => {
+                            btn.innerHTML = originalText;
+                            btn.style.backgroundColor = '';
+                        }, 3000);
+                    });
             }
         });
     }
